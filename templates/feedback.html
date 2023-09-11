@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <script src="../static/js/bootstrap.js"></script>
+</head>
+<body>
+    <div class="container bg-info py-5 text-center">
+        <form class="login__form" method="post" action="/save_feedback" enctype="multipart/form-data">
+            <div class="login__form-wrapper bg-dark text-white">
+                <h1>Submit Your Feedback Here...</h1>
+                <p>{{message}}</p>
+                <div class="login__field-group">
+                    <label class="login__label" for="name">User name</label>
+                    <input class="login__field" id="name" type="text" name="name" required/>
+                </div><br>
+                
+               
+    
+                <div class="login__field-group">
+                    <label class="login__label" for="name">User Feedback</label><br>
+                     <textarea name="feedback_desc" id="desc" cols="30" rows="10" required class="py-5 my-2 mt-2 mb-2 ml-3 " ></textarea>
+                </div>
+    
+    
+    
+                
+            </div>
+    
+            <input type="submit" value="Send Feedback" class="btn btn-success">
+           
+        </form>
+
+    </div>
+  
+    
+    
+</body>
+</html>

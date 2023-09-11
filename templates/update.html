@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+ <meta charset="UTF-8">
+
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <title>Document</title>
+
+ <link rel="stylesheet" href="../static/css/bootstrap.css">
+
+
+
+
+</head>
+
+
+
+<body>
+
+ <div class="container bg-info">
+
+ <div class="modal-dialog modal-scrollable p-3 m-3">
+
+ <div class="modal-content">
+
+ <div class="modal-header">
+
+ <h5>Update Your Products</h5>
+
+ <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
+
+ </div>
+
+ <!-- end header -->
+
+ <div class="modal-body">
+
+ <div class="card shadow mt-3 mb-3">
+
+ <h5 class="m-2">{{message}}</h5>
+
+ <form action="http://127.0.0.1:5000/update/{{data[0]}}" method="post" enctype="multipart/form-data">
+
+ <label for="name" class="form-label">Product Name</label>
+
+ <input type="text" name="name" id="name" class="form-control" value="{{data[1]}}">
+
+
+
+ <label for="description" class="form-label">Product description</label>
+
+ <textarea name="desc" id="" cols="30" rows="10" class="form-control">{{data[2]}}</textarea>
+
+
+
+ <label for="Cost" class="form-label">product Cost</label>
+
+ <input type="number" name="cost" id="cost" class="form-control" value="{{data[3]}}">
+
+
+
+
+
+ <label for="discount" class="form-label">product discount</label>
+
+ <input type="number" name="discount" id="discount" class="form-control" value="{{data[4]}}">
+
+
+
+
+
+ <label for="Category" class="form-label">products category</label>
+
+ <select name="category" id="category" class="form-control" value="{{data[5]}}">
+
+ <option value="phones">phones</option>
+
+ <option value="laptops">laptops</option>
+
+ <option value="shoes">shoes</option>
+
+ <option value="clothes">clothes</option>
+
+ <option value="cosmetics">cosmetics</option>
+
+
+
+
+ </select>
+
+
+
+
+
+ <label for="brand" class="form-label">product brand</label>
+
+ <input type="text" name="brand" id="brand" class="form-control" value="{{data[6]}}">
+
+
+
+
+
+ <label for="image" class="form-label">Product image</label>
+
+ <input type="file" name="image" id="image" class="form-control" value="{{data[7]}}"><br>
+
+
+
+
+ <input type="number" name="vendor" id="vendor" placeholder="Vendor-id" class="form-control">
+
+
+
+ <input type="submit" value="Update Product" class="btn btn-success">
+
+
+
+
+ </form>
+
+
+
+ </div>
+
+
+
+
+ </div>
+
+ <!-- end body -->
+
+ <div class="modal-footer">
+
+ <button class="btn btn-danger" data-bs-dismiss="modal"></button>
+
+
+
+ </div>
+
+
+
+ </div>
+
+
+
+ </div>
+
+
+
+ </div>
+
+
+
+</body>
+
+
+
+</html>

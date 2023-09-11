@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Products..Mshop</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <script src="../static/js/bootstrap.js"></script>
+
+</head>
+<body>
+    <div class="container bg-info">
+        <h3 class="bg-warning p-3 mt-2 text-white">Latest Phones</h3>
+        <section class="row">
+            {% for Phone in Phones  %}
+            <div class="col-md-4">
+                <div class="card shadow my-2 ">
+                    <img src="../static/products/{{Phone[7]}}" alt="" width="100%" height="300px" style="border-radius: 15px;">
+                    <h4 class="text-danger  text-center ">{{Phone[1]}}</h4>
+                    <p class="badge bg-dark text-center">{{Phone[6]}}</p>
+                    <h5 class="text-center">Kshs {{Phone[3]}}</h5>
+
+                    <a href="/single_item/{{Phone[0]}}" class="btn btn-success">View Product</a>
+
+                </div>
+
+
+            </div>
+            {% endfor %}
+
+
+    
+
+
+        </section>
+        
+
+    </div>
+
+
+
+
+    <div class="container bg-info">
+        <h3 class="bg-warning p-3 mt-2 text-white">Laptop Deals!</h3>
+        <section class="row">
+            {% for laptop in laptop  %}
+            <div class="col-md-4">
+                <div class="card shadow my-2 ">
+                    <img src="../static/products/{{laptop[7]}}" alt="" width="100%" height="300px" style="border-radius: 15px;">
+                    <h4 class="text-danger  text-center ">{{laptop[1]}}</h4>
+                    <p class="badge bg-dark text-center">{{laptop[6]}}</p>
+                    <h5 class="text-center">Kshs {{laptop[3]}}</h5>
+                    <a href="/single_item/{{laptop[0]}}" class="btn btn-success">View Product</a>
+
+                </div>
+
+
+            </div>
+            {% endfor %}
+
+
+    
+
+
+        </section>
+        
+
+    </div>
+
+
+
+    <div class="container bg-info">
+        <h3 class="bg-warning p-3 mt-2 text-white">Latest Outfit</h3>
+        <section class="row">
+            {% for Clothes in Clothes  %}
+            <div class="col-md-4">
+                <div class="card shadow my-2 ">
+                    <img src="../static/products/{{Clothes[7]}}" alt="" width="100%" height="300px" style="border-radius: 15px;">
+                    <h4 class="text-danger  text-center ">{{Clothes[1]}}</h4>
+                    <p class="badge bg-dark text-center">{{Clothes[6]}}</p>
+                    <h5 class="text-center">Kshs {{Clothes[3]}}</h5>
+                    <a href="/single_item/{{Clothes[0]}}" class="btn btn-success">View Product</a>
+
+                </div>
+
+
+            </div>
+            {% endfor %}
+
+
+    
+
+
+        </section>
+        
+
+    </div>
+    
+</body>
+</html>

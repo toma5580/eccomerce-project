@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <script src="../static/js/bootstrap.js"></script>
+</head>
+<body>
+    <div class="container bg-info">
+        <section class="row">
+            <div class="col-md-6">
+
+                <div class="card shadow p-1 my-1">
+                    <h4 class="text-center text-dark bg-warning">{{single_record[1]}}</h4>
+                    <img src="../static/products/{{single_record[7]}}" alt="" width="100%" height="320px" style="border-radius: 15px;">
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <p class="lead text-center mt-2">{{single_record[2]}}</p>
+                <h5 class="text-center">Cost: Kshs {{single_record[3]}}</h5>
+                <h5 class="text-center">Discount: Kshs {{single_record[4]}}</h5>
+              {% if 'user_key' in session %}
+                <div class=" card shadow">
+                    <form action="/mpesa" method="post">
+                        <input type="number" name="amount" value="{{single_record[3]}}" class="form-control" readonly>
+                        <input type="tel" name="phone" placeholder="Enter Your Phone 2547XXXXXXXX" class="form-control" required>
+    
+                        <input type="submit" value="Lipa na Mpesa" class="btn btn-success mt-3">
+                    </form>
+                </div>
+                <a href="/user_logout" class="btn btn-danger mt-4">Log Out</a>
+                <a href="/save_feedback" class="btn btn-danger mt-4">Send Feedback</a>
+                <a href="/view_feedback" class="btn btn-danger mt-4">View Feedback</a>
+
+                {% else %}
+                           
+              
+                <a href="/user_login" class="btn btn-dark mt-4" 
+                
+                style="margin-left: 150px;">Sign in to purchase</a>
+               
+                {% endif %}
+            </div>
+
+        </section>
+
+        <br><br>
+        <h3>You May Also Like......</h3>
+        <section class="row">
+            {% for item in similar_products %}
+            <div class="col-md-4">
+                <div class="card shadow my-2 ">
+                    <img src="../static/products/{{item[7]}}" alt="" width="100%" height="300px" style="border-radius: 15px;">
+                    <h4 class="text-danger  text-center ">{{item[1]}}</h4>
+                    <p class="badge bg-dark text-center">{{item[6]}}</p>
+                    <h5 class="text-center">Kshs {{item[3]}}</h5>
+                    <a href="/single_item/{{item[0]}}" class="btn btn-success">View Product</a>
+
+                </div>
+
+
+            </div>
+            {% endfor %}
+
+
+    
+
+
+        </section>
+        
+
+    </div>
+    
+
+</body>
+</html>
